@@ -1,0 +1,22 @@
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 2, 4};
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            // Find an odd number from the left
+            while (left < right && arr[left] % 2 == 0) {
+                left++;
+            }
+            // Find an even number from the right
+            while (left < right && arr[right] % 2 != 0) {
+                right--;
+            }
+            // Swap
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        System.out.println(Arrays.toString(arr));
+    }
+}
